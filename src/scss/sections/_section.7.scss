@@ -1,0 +1,28 @@
+.section-7{
+    background-color: $white;
+    padding: 8% 5%;
+    @include flex-align-center();
+    flex-direction: column;
+    &>div{
+        @include flex-center();
+        flex-direction: column;
+        text-align: center;
+        max-width: 600px;
+        button{
+            width: 200px;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    }
+    &>button{
+        font-weight: bolder;
+        margin-top: 20px;
+    }
+    &:is(.large-screen){
+        &>button{
+            margin-left: auto;
+            margin-top: 0;
+            margin-bottom: -80px;
+        }
+    }
+}

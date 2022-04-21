@@ -1,0 +1,28 @@
+.section-4{
+    background-color: $white;
+    padding: 0% 5% 5% 5%;
+    overflow-x: hidden;
+    h2{ font-weight: lighter; }
+    &>:first-child{ width: 100%; }
+    &.large-screen>:first-child{ width: 50%; }
+    &>:last-child img {
+        transform: scale(0);
+        transition: 5s transform;
+    }
+    &.visible>:last-child img {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: -30px;
+        transform: scale(1);
+        animation-name: imageRotate;
+        animation-delay: 5s;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes imageRotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}

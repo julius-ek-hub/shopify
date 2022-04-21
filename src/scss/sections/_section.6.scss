@@ -1,0 +1,40 @@
+.section-6{
+    background-color: $brown-ish;
+    padding: 0% 5% 5% 5%;
+    display: flex;
+    flex-wrap: wrap;
+    h1{
+        font-weight: 500;
+        font-size: 2em;
+    }
+    &>div{
+        @include flex-justify-center();
+        flex-direction: column;
+        flex-grow: 1;
+        min-width: 200px;
+    }
+
+    &>:first-child {
+       width: 70%;
+       &>:last-child{
+           display: flex;
+           flex-wrap: wrap;
+           &>div{
+               width: 40%;
+               flex-grow: 1;
+               margin-right: 10px;
+               &>div{color: $mid-black;}
+           }
+       }
+    }
+    &>:last-child {
+        width: 30%;
+        overflow: hidden;
+        margin-top: 18px;
+        img{
+            @include fill();
+            object-fit: cover;
+        }
+    }
+    &:is(.large-screen)>div { width: 50%; }
+}

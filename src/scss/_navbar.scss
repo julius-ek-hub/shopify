@@ -1,0 +1,69 @@
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    transition: 0.25s all;
+    background-color: $brown-ish;
+    &.shadow{
+        background-color: $white;
+        box-shadow: 0 .125rem .25rem $lightest-black !important;  
+    }
+    nav{
+        @include flex-between();
+        height: 65px;
+
+        ul {
+            display: flex;
+            padding-inline-start: 20px;
+            margin-top: 24px;
+        }
+
+        button{font-weight: bold !important;}
+
+        .nav-left, .nav-right{ @include flex-align-center(); }
+
+        .nav-left{ margin-left: 5%; }
+        .nav-right{ margin-right: 5%; }
+    }
+
+    &.desktop{ z-index: 10; }
+    &.mobile{ z-index: 1500; }
+}
+
+.logo {
+    @include flex-align-center();
+    img{
+        width: 35px;
+        height: 45px;
+        margin: -10px 4px 0 0;
+    }
+}
+
+.drop-down-menu-item{
+    font-weight: bold !important;
+    white-space: normal !important;
+    border-radius: 0px;
+    &:hover{
+        border-left: 4px solid $green-main;
+    }
+}
+
+.nav-sub-dropdown{
+    display: flex;
+    &>div{
+        max-width: 200px;
+        &:is(.right-sub-menu){
+            border-left: 1px solid $lightest-black;
+        }
+    }
+}
+
+.nav-items-heading{
+    color: $light-black;
+    padding: 10px;
+}
+
+.small-screen-menu-logo-holder{
+    @include flex-between(); 
+     margin: 0 20px;
+}

@@ -1,0 +1,97 @@
+.section-1{
+    background-color: $brown-ish;
+    @include flex-justify-center();
+    flex-direction: column;
+    padding: 0% 5%;
+    min-height: calc(100% - 65px);
+    &>:first-child {
+        width: 100%;
+        height: unset;
+        h1{
+            color: $green-main;
+            font-size: 1.8em;
+            line-height: 1.2em;
+            font-weight: 900 !important;
+        }
+        .muted{
+            margin-bottom: 20px;
+            color: $mid-black;
+        }
+        .small{
+            margin-top: 20px;
+            font-size: small;
+        }
+        .form{
+            width: 100%;
+            display: flex;
+            .MuiFormControl-root{
+                width: 70%;
+                margin-right: 10px;
+                background-color: $white !important;
+                .MuiOutlinedInput-root{ padding: 10px !important; }
+            }
+            button{
+                flex-grow: 1;
+                font-size: 1.2em;
+            }
+        &.fill{
+                flex-direction: column;
+                .MuiFormControl-root{
+                    width: 100%;
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+    &>:last-child {
+        flex-grow: 1;
+        height: 100%;
+        padding: 10px;
+        @include flex-center();
+        img{ width: 100%; }
+    }
+    &:is(.large-screen){
+        flex-direction: row;
+        align-items: center;
+        &>:first-child {
+            width: 35%;
+            height: 100%;
+            h1{
+                font-size: 3em;
+                span{ display: block; }
+            }
+            .form{
+                flex-direction: column;
+                .MuiFormControl-root{
+                    width: 100%;
+                    margin: 10px 0;
+                }
+            }
+        }
+        &>:last-child {
+            flex-grow: 1;
+            height: 100%;
+            padding: 10px;
+            padding-left: 80px;
+            img{ width: 90%; }
+        }
+    }
+}
+
+.join-form {
+    width: 100%;
+    align-items: center;
+    &>div{ width: 100%; }
+    &>:last-child{ display: flex; }
+    .MuiOutlinedInput-root{
+        margin: 8px 0;
+        border-radius: 6px;
+        overflow: hidden;
+        width: 100%;
+        background-color: $white;
+    }
+    input{
+        padding: 28px;
+        border: none;
+    }
+}

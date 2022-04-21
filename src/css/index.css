@@ -1,0 +1,754 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+#root {
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  text-transform: none !important;
+}
+
+.MuiModal-root[aria-labelledby=dark-modal] {
+  z-index: 1500 !important;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  transition: 0.25s all;
+  background-color: #fbf7ed;
+}
+
+header.shadow {
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+}
+
+header nav ul {
+  display: flex;
+  padding-inline-start: 20px;
+  margin-top: 24px;
+}
+
+header nav button {
+  font-weight: bold !important;
+}
+
+header nav .nav-left, header nav .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+header nav .nav-left {
+  margin-left: 5%;
+}
+
+header nav .nav-right {
+  margin-right: 5%;
+}
+
+header.desktop {
+  z-index: 10;
+}
+
+header.mobile {
+  z-index: 1500;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 35px;
+  height: 45px;
+  margin: -10px 4px 0 0;
+}
+
+.drop-down-menu-item {
+  font-weight: bold !important;
+  white-space: normal !important;
+  border-radius: 0px;
+}
+
+.drop-down-menu-item:hover {
+  border-left: 4px solid #004c3f;
+}
+
+.nav-sub-dropdown {
+  display: flex;
+}
+
+.nav-sub-dropdown > div {
+  max-width: 200px;
+}
+
+.nav-sub-dropdown > div:is(.right-sub-menu) {
+  border-left: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.nav-items-heading {
+  color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+}
+
+.small-screen-menu-logo-holder {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.section-1 {
+  background-color: #fbf7ed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0% 5%;
+  min-height: calc(100% - 65px);
+}
+
+.section-1 > :first-child {
+  width: 100%;
+  height: unset;
+}
+
+.section-1 > :first-child h1 {
+  color: #004c3f;
+  font-size: 1.8em;
+  line-height: 1.2em;
+  font-weight: 900 !important;
+}
+
+.section-1 > :first-child .muted {
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.section-1 > :first-child .small {
+  margin-top: 20px;
+  font-size: small;
+}
+
+.section-1 > :first-child .form {
+  width: 100%;
+  display: flex;
+}
+
+.section-1 > :first-child .form .MuiFormControl-root {
+  width: 70%;
+  margin-right: 10px;
+  background-color: #fff !important;
+}
+
+.section-1 > :first-child .form .MuiFormControl-root .MuiOutlinedInput-root {
+  padding: 10px !important;
+}
+
+.section-1 > :first-child .form button {
+  flex-grow: 1;
+  font-size: 1.2em;
+}
+
+.section-1 > :first-child .form.fill {
+  flex-direction: column;
+}
+
+.section-1 > :first-child .form.fill .MuiFormControl-root {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.section-1 > :last-child {
+  flex-grow: 1;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-1 > :last-child img {
+  width: 100%;
+}
+
+.section-1:is(.large-screen) {
+  flex-direction: row;
+  align-items: center;
+}
+
+.section-1:is(.large-screen) > :first-child {
+  width: 35%;
+  height: 100%;
+}
+
+.section-1:is(.large-screen) > :first-child h1 {
+  font-size: 3em;
+}
+
+.section-1:is(.large-screen) > :first-child h1 span {
+  display: block;
+}
+
+.section-1:is(.large-screen) > :first-child .form {
+  flex-direction: column;
+}
+
+.section-1:is(.large-screen) > :first-child .form .MuiFormControl-root {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.section-1:is(.large-screen) > :last-child {
+  flex-grow: 1;
+  height: 100%;
+  padding: 10px;
+  padding-left: 80px;
+}
+
+.section-1:is(.large-screen) > :last-child img {
+  width: 90%;
+}
+
+.join-form {
+  width: 100%;
+  align-items: center;
+}
+
+.join-form > div {
+  width: 100%;
+}
+
+.join-form > :last-child {
+  display: flex;
+}
+
+.join-form .MuiOutlinedInput-root {
+  margin: 8px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #fff;
+}
+
+.join-form input {
+  padding: 28px;
+  border: none;
+}
+
+.section-2 {
+  background-color: #004c3f;
+  padding: 0% 5% 5% 5%;
+  color: #fff;
+}
+
+.section-2 h1 {
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+.section-2 .intro {
+  margin: 20px 0 20px 0;
+}
+
+.section-2 .image-container, .section-2 .cards {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section-2 .image-container .card, .section-2 .cards .card {
+  flex-grow: 1;
+  margin: 20px 10px 0 0;
+  width: 150px;
+}
+
+.section-2 .image-container .card img, .section-2 .cards .card img {
+  object-fit: cover;
+  height: 400px;
+  width: 100%;
+}
+
+.section-2 .image-container .card a, .section-2 .cards .card a {
+  display: block;
+  font-weight: normal;
+  margin-top: 8px;
+}
+
+.section-2 .image-container .card a:first-child, .section-2 .cards .card a:first-child {
+  font-weight: bolder;
+}
+
+.section-2 .image-container .card a:hover :first-child, .section-2 .cards .card a:hover :first-child {
+  text-decoration: underline;
+}
+
+.section-2 .cards .card {
+  margin-right: 40px;
+  width: 150px;
+  padding: 10px;
+}
+
+.section-2 .cards .card .title {
+  font-weight: bolder;
+  margin: 10px 0;
+}
+
+.section-2 > * {
+  padding-top: 50px;
+}
+
+.section-3 {
+  background-color: #fff;
+  padding: 0% 5% 5% 5%;
+}
+
+.section-3 h1 {
+  font-size: 2em;
+}
+
+.section-3 .intro {
+  margin: 10px 0 20px 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.section-3 > :first-child {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.section-3 > :first-child > div {
+  max-width: 600px;
+  text-align: center;
+}
+
+.section-3 > :last-child > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  margin-top: 50px;
+}
+
+.section-3 > :last-child > div > div {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.section-3 > :last-child > div > div video, .section-3 > :last-child > div > div img {
+  width: 100%;
+}
+
+.section-3.large-screen > :last-child > div {
+  flex-direction: row-reverse;
+  margin-top: 0;
+}
+
+.section-3.large-screen > :last-child > div > div {
+  flex-grow: 0;
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.section-3.large-screen > :last-child > div > div:last-child {
+  padding-right: 50px;
+}
+
+.section-3.large-screen > :last-child > div > div video, .section-3.large-screen > :last-child > div > div img {
+  width: 100%;
+}
+
+.section-3.large-screen > :last-child > div:nth-child(odd) {
+  flex-direction: row;
+}
+
+.section-3.large-screen > :last-child > div:nth-child(odd) > :last-child {
+  padding-left: 50px;
+}
+
+.section-4 {
+  background-color: #fff;
+  padding: 0% 5% 5% 5%;
+  overflow-x: hidden;
+}
+
+.section-4 h2 {
+  font-weight: lighter;
+}
+
+.section-4 > :first-child {
+  width: 100%;
+}
+
+.section-4.large-screen > :first-child {
+  width: 50%;
+}
+
+.section-4 > :last-child img {
+  transform: scale(0);
+  transition: 5s transform;
+}
+
+.section-4.visible > :last-child img {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: -30px;
+  transform: scale(1);
+  animation-name: imageRotate;
+  animation-delay: 5s;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes imageRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.section-5 {
+  background-color: #fff;
+  padding: 0% 5% 5% 5%;
+}
+
+.section-5 > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-5 > div > div {
+  width: 50%;
+  min-width: 300px;
+  flex-grow: 1;
+}
+
+.section-5 > :first-child > :first-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.section-5 > :first-child > :last-child {
+  background-color: #002e25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 10%;
+  text-align: center;
+}
+
+.section-5 > :first-child > :last-child img {
+  margin: 20px 0 20px 0;
+}
+
+.section-5 > :first-child > :last-child .open-video-btn {
+  border: 1px solid #fff;
+  width: 100%;
+  padding: 1em;
+  font-weight: bolder;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.section-5 > :first-child > :last-child .open-video-btn > * {
+  color: #fff;
+  margin-right: 5px;
+}
+
+.section-5 > :first-child > :last-child .open-video-btn:hover {
+  background-color: #fff;
+}
+
+.section-5 > :first-child > :last-child .open-video-btn:hover > * {
+  color: #000;
+}
+
+.section-5 > :last-child {
+  padding: 20px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-5 > :last-child img {
+  margin: 10px 0px;
+  object-fit: contain;
+}
+
+.video-player {
+  display: flex;
+  justify-content: center;
+}
+
+.video-player .container {
+  position: relative;
+  max-width: 100%;
+}
+
+.video-player .container > button {
+  margin-left: calc(100% - 60.5px);
+}
+
+.video-player .container video {
+  width: 100%;
+}
+
+.video-player .container .cover {
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  bottom: 0;
+}
+
+.video-player .container .controls {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  background-color: #004c3f;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.video-player .container .controls button {
+  min-width: unset;
+}
+
+.video-player .container .controls .slide-container {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  margin-left: 14px;
+  position: relative;
+}
+
+.video-player.preview {
+  width: 150px;
+  position: absolute;
+  bottom: 25px;
+}
+
+.video-player.preview .cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-player.preview .readable {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 4px 12px;
+  border-radius: 5px;
+}
+
+.section-6 {
+  background-color: #fbf7ed;
+  padding: 0% 5% 5% 5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-6 h1 {
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.section-6 > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.section-6 > :first-child {
+  width: 70%;
+}
+
+.section-6 > :first-child > :last-child {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-6 > :first-child > :last-child > div {
+  width: 40%;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.section-6 > :first-child > :last-child > div > div {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.section-6 > :last-child {
+  width: 30%;
+  overflow: hidden;
+  margin-top: 18px;
+}
+
+.section-6 > :last-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.section-6:is(.large-screen) > div {
+  width: 50%;
+}
+
+.section-7 {
+  background-color: #fff;
+  padding: 8% 5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section-7 > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 600px;
+}
+
+.section-7 > div button {
+  width: 200px;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.section-7 > button {
+  font-weight: bolder;
+  margin-top: 20px;
+}
+
+.section-7:is(.large-screen) > button {
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: -80px;
+}
+
+section {
+  overflow: hidden;
+}
+
+footer {
+  background-color: #002e25;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+footer > * {
+  padding-left: 5%;
+}
+
+footer > :first-child {
+  padding: 2% 5%;
+}
+
+footer > :first-child > div {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer > :first-child > div button {
+  font-weight: bolder;
+  padding-bottom: 1.4em;
+  font-size: 1.1em;
+  border-radius: 0;
+}
+
+footer > :first-child > div button:hover {
+  border-bottom: 2px solid #fff;
+}
+
+footer > :nth-child(2) {
+  display: flex;
+  padding-bottom: 3%;
+  flex-wrap: wrap;
+}
+
+footer > :nth-child(2) > * {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+footer > :nth-child(2) > * button {
+  justify-content: flex-start !important;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer > :nth-child(2) > * button:hover {
+  color: inherit;
+}
+
+footer > :last-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2% 5%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  flex-grow: 1;
+}
+
+footer > :last-child > * {
+  flex-grow: 1;
+  white-space: nowrap;
+  text-align: center;
+  margin: 5px 0;
+}
+
+footer > :last-child button {
+  min-width: 20px;
+  margin: 0 4px;
+}
+
+.countries-picker {
+  padding: 0 15px;
+}
+
+.countries-picker > * {
+  display: flex;
+}
+
+.countries-picker > :last-child > div button {
+  display: block;
+  min-width: 200px;
+  border-radius: 0px;
+  text-align: left;
+}
+/*# sourceMappingURL=index.css.map */

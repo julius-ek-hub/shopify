@@ -1,0 +1,36 @@
+$brown-ish: #fbf7ed;
+$white: #fff;
+$black: #000;
+$deem-white: rgba(255, 255, 255, 0.2);
+$grey: rgba(255, 255, 255, 0.7);
+$green-main: #004c3f;
+$thick-green: #002e25;
+$lightest-black: rgba(0,0,0,.075);
+$mid-black: rgba(0,0,0,0.5);
+$light-black: rgba(0,0,0,0.8);
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin fill {
+    height: 100%;
+    width: 100%;
+}

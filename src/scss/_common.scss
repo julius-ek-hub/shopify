@@ -1,0 +1,20 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+#root{ min-height: 100%; }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* { box-sizing: border-box !important; }
+
+ul{ list-style-type: none; }
+
+button{ text-transform: none !important; }
+
+.MuiModal-root[aria-labelledby = dark-modal]{z-index: 1500 !important;}

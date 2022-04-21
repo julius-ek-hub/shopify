@@ -1,0 +1,48 @@
+.section-3{
+    background-color: $white;
+    padding: 0% 5% 5% 5%;
+    h1{ font-size: 2em; }
+    .intro {
+        margin: 10px 0 20px 0;
+        color: $mid-black;
+    }
+
+    &>:first-child {
+        padding-top: 50px;
+        @include flex-justify-center();
+        &>div{
+            max-width: 600px;
+            text-align: center;
+        }
+    }
+    &>:last-child {
+        &>div{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            margin-top: 50px;
+            &>div{
+                flex-grow: 1;
+                width: 100%;
+                video, img{ width: 100%; }
+            }
+        }
+    }
+    &.large-screen>:last-child {
+        &>div{
+            flex-direction: row-reverse;
+            margin-top: 0;
+            &>div{
+                flex-grow: 0;
+                width: 50%;
+                @include flex-align-center();
+                &:last-child{ padding-right: 50px; }
+                video, img{ width: 100%; }
+            }
+            &:nth-child(odd){
+                flex-direction: row;
+                &>:last-child{ padding-left: 50px; }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.section-2{
+    background-color: $green-main;
+    padding: 0% 5% 5% 5%;
+    color: $white;
+    h1{
+        font-size: 2em;
+        font-weight: bolder;
+    }
+    .intro { margin: 20px 0 20px 0; }
+    .image-container, .cards{
+        margin-top: 20px;
+        @include flex-between();
+        flex-wrap: wrap;
+        .card{
+            flex-grow: 1;
+            margin: 20px 10px 0 0;
+            width: 150px;
+            img{
+                object-fit: cover;
+                height: 400px;
+                width: 100%;
+            }
+            a{
+                display: block;
+                font-weight: normal;
+                margin-top: 8px;
+                &:first-child{ font-weight: bolder; }
+                &:hover :first-child{ text-decoration: underline; }
+            }
+        }
+    }
+    .cards .card{
+        margin-right: 40px;
+        width: 150px;
+        padding: 10px;
+        .title{
+            font-weight: bolder;
+            margin: 10px 0;
+        }
+    }
+
+    &>* { padding-top: 50px; }
+}

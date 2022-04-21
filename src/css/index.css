@@ -571,6 +571,19 @@ header.mobile {
   border-radius: 5px;
 }
 
+.video-loading-ui {
+  color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+}
+
+.video-loading-ui .MuiCircularProgress-root {
+  width: 25px !important;
+  height: 25px !important;
+  margin-right: 8px;
+  color: inherit;
+}
+
 .section-6 {
   background-color: #fbf7ed;
   padding: 0% 5% 5% 5%;

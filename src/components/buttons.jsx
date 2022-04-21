@@ -5,7 +5,7 @@ import ArrowUpward from '@mui/icons-material/ArrowUpward';
 import  But  from "@mui/material/Button";
 
 import TryForm from "./Try.form";
-import { boxStyle, modalProps, useModalState } from "../utils/modal";
+import { boxStyle, modalProps, useModalStateManager } from "../utils/modal";
 
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
@@ -37,7 +37,7 @@ export const Go = ({label, color, sx, direction = 'right', ...rest}) => (
 
 
 export const TryButton = (props) => {
-    const [open, handleOpen, handleClose] = useModalState(false);
+    const [open, handleOpen, handleClose] = useModalStateManager(false);
 
     return (
         <>

@@ -25,8 +25,8 @@ export const boxStyle = {
 }
 
 
-export const useModalState = (current) => {
-    const [ open, setOpen ] = useState(current);
+export const useModalStateManager = () => {
+    const [ open, setOpen ] = useState(false);
     const themeCol = useRef();
 
     const handleOpen = () => {

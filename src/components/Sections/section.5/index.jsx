@@ -5,10 +5,10 @@ import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import VideoPlayer from "./VideoPlayer";
 
-import { boxStyle, modalProps, useModalState } from '../../../utils/modal';
+import { boxStyle, modalProps, useModalStateManager } from '../../../utils/modal';
 
 const Section5 = ({className}) => {
-    const [open, handleOpen, handleClose] = useModalState();
+    const [open, handleOpen, handleClose] = useModalStateManager();
     
     return (
     <section className={`section-5 ${className || ''}`}>

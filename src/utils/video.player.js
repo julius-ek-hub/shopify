@@ -1,4 +1,4 @@
-import { useState, useRef, createRef } from "react";
+import { useState, useRef, createRef, useEffect } from "react";
 
 export const src = "https://media.istockphoto.com/videos/short-one-minute-story-about-a-young-couple-meeting-a-friend-in-the-video-id1358085867";
 
@@ -11,6 +11,7 @@ export const useVideoStateManager = () => {
     const [previewLocation, setPreviewLocation] = useState(0);
     const [openPreview, setOpenPreview] = useState(false);
     const [previewSlideWidth, setPreviewSlideWidth] = useState(1);
+    const [blob, setBlob] = useState();
 
     const previewTimeout = useRef();
 
@@ -52,6 +53,13 @@ export const useVideoStateManager = () => {
         setPreviewSlideWidth(bc.width);
     }
 
+    useEffect(() => {
+        fetch(src).then(res => res.blob())
+        .then(b => {
+            setBlob(window.URL.createObjectURL(b))
+        }).catch(() => setBlob('error'))
+    }, [setBlob])
+
     return {
         currentTime,
         readableTime,
@@ -61,6 +69,7 @@ export const useVideoStateManager = () => {
         previewSlideWidth,
         videoRef,
         previewBoxRef,
+        blob,
         setPlaying,
         handleChange,
         handlePlay,

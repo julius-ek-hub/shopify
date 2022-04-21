@@ -93,3 +93,14 @@
         }
     }
 }
+
+.video-loading-ui{
+    color: $deem-white;
+    @include flex-justify-center();
+    .MuiCircularProgress-root{
+        width: 25px !important;
+        height: 25px !important;
+        margin-right: 8px;
+        color: inherit;
+    }
+}

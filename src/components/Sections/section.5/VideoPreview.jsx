@@ -1,8 +1,6 @@
 import { useRef } from "react";
 
-import { src } from '../../../utils/video.player';
-
-export default function VideoPreview({previewLocation, open, sliderWidth}){
+export default function VideoPreview({previewLocation, open, sliderWidth, src}){
 
     const videoRef = useRef();
     const readableRef = useRef();

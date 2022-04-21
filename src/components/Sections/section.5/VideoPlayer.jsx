@@ -9,18 +9,43 @@ import Close from "@mui/icons-material/Close";
 
 import Button from '../../buttons';
 import VideoPreview from './VideoPreview';
-import { useVideoStateManager, src } from '../../../utils/video.player';
+import { useVideoStateManager } from '../../../utils/video.player';
+
+import CircularProgress from '@mui/material/CircularProgress';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+
+function Loading() {
+  return (
+    <div className='video-loading-ui'>
+      <CircularProgress/>
+      Loading Video...
+    </div>
+  );
+}
+
+function LoadError() {
+  return (
+    <Alert severity="error">
+        <AlertTitle>Error</AlertTitle>
+        Failed to load video — Please check connection or re-open this modal
+    </Alert>
+  );
+}
+
+
+
 
 export default function VideoPlayer({onClose}){
     const vsm = useVideoStateManager();
 
-    return (
+    return ( !vsm.blob ? <Loading/> : vsm.blob === 'error' ? <LoadError/> :
         <div className="video-player">
             <div className="container">
                 <Button onClick={onClose} sx={{ml:'auto', mb: '10px'}}><Close/></Button>
                 <video 
                     onTimeUpdate={vsm.doSetCurrentTime} 
-                    src={src} ref={vsm.videoRef} 
+                    src={vsm.blob} ref={vsm.videoRef} 
                     onPlay={()=> vsm.setPlaying(true)} 
                     onPause={()=> vsm.setPlaying(false)}/>
                 <div className="cover"></div>
@@ -43,6 +68,7 @@ export default function VideoPlayer({onClose}){
                         <VideoPreview 
                             previewLocation={vsm.previewLocation}
                             sliderWidth={vsm.previewSlideWidth}
+                            src={vsm.blob}
                             open={vsm.openPreview}/>
                     </div>
                     <Button><ClosedCaptionOffOutlinedIcon/></Button>

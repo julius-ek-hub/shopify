@@ -1,7 +1,9 @@
-import { createRef, useState } from 'react';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
+import CircularProgress from '@mui/material/CircularProgress';
+
 import Button, { Go } from '../buttons';
+import { useSection3VideoStateManager } from '../../utils/videos';
 
 
 const items = [
@@ -29,12 +31,12 @@ const items = [
     },
 ];
 
-const Section3 = ({className}) => {
-    const [videoPlaying, setVideoPlaying] = useState(false);
-    const videoRef = createRef();
+
+const Section3 = ({ className }) => {
+    const vsm = useSection3VideoStateManager();
 
     return (
-    <section className={`section-3 ${className || ''}`}>
+    <section className={`section-3 ${className}`}>
         <div>
             <div>
                 <h1>With you wherever you're going</h1>
@@ -47,19 +49,23 @@ const Section3 = ({className}) => {
         <div>
             <div>
                 <div style={{position: 'relative'}}>
-                    <video 
-                        src={items[0].image}
-                        ref={videoRef}
-                        onPlay={() => setVideoPlaying(true)}
-                        onPause={() => setVideoPlaying(false)}
-                    />
-                    <Button onClick={()=> videoRef.current[videoPlaying ? 'pause' : 'play']()} sx={{
-                        position: 'absolute', 
-                        right: 0, 
-                        bottom: 0
-                        }}>
-                            {videoPlaying ? <PauseIcon/> : <PlayArrowIcon/>}
+                    { !vsm.blob ? <div className='video-loading-ui'><CircularProgress/>Fetching Video...</div> :
+                    <>
+                        <video 
+                            src={items[0].image}
+                            ref={vsm.videoRef}
+                            onPlay={() => vsm.setVideoPlaying(true)}
+                            onPause={() => vsm.setVideoPlaying(false)}
+                        />
+                        <Button onClick={vsm.toggle} sx={{
+                            position: 'absolute', 
+                            right: 0, 
+                            bottom: 0
+                            }}>
+                                { vsm.videoPlaying ? <PauseIcon/> : <PlayArrowIcon/>}
                         </Button>
+                    </>
+                    }
                 </div>
                 <div>
                     <div>

@@ -29,6 +29,28 @@ button {
   z-index: 1500 !important;
 }
 
+.me-box {
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 20px !important;
+  height: 320px;
+  transform: translateZ(0px);
+  flex-grow: 1;
+  transition: 5s transform;
+}
+
+.me-box .MuiSpeedDial-fab {
+  background-color: #004c3f !important;
+}
+
+.me-box.show-me .MuiSpeedDial-fab {
+  transform: scale(1) !important;
+}
+
+.me-box.hide-me .MuiSpeedDial-fab {
+  transform: scale(0) !important;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -582,6 +604,12 @@ header.mobile {
   height: 25px !important;
   margin-right: 8px;
   color: inherit;
+}
+
+.video-loading-ui:is(.section-3 .video-loading-ui) {
+  color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  margin: 10% 0;
 }
 
 .section-6 {

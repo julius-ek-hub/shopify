@@ -6,24 +6,25 @@ const isVisible = el => {
 }
 
 const scrollHandler = () => {
+    try{
+        const sec1 = find('section.section-1');
+        const vid3 = find('section.section-3 video');
+        const sec4 = find('section.section-4');
+        const header = find('header');
 
-    const sec1 = find('section.section-1');
-    const vid3 = find('section.section-3 video');
-    const sec4 = find('section.section-4');
-    const header = find('header');
+        if(window.scrollY >= sec1.clientHeight)
+            header.classList.add('shadow');
+        else
+            header.classList.remove('shadow');
 
-    if(window.scrollY >= sec1.clientHeight)
-        header.classList.add('shadow');
-    else
-        header.classList.remove('shadow');
+        if(isVisible(sec4))
+            sec4.classList.add('visible');
 
-    if(isVisible(sec4))
-        sec4.classList.add('visible');
-
-    if(isVisible(vid3))
-        vid3.play().catch(()=>{});
-    else 
-        vid3.pause();
+        if(isVisible(vid3))
+            vid3.play().catch(()=>{});
+        else 
+            vid3.pause();
+    }catch(e){}
 }
 
 export const monitorScroll = () => {

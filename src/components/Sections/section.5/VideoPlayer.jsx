@@ -9,7 +9,7 @@ import Close from "@mui/icons-material/Close";
 
 import Button from '../../buttons';
 import VideoPreview from './VideoPreview';
-import { useVideoStateManager } from '../../../utils/video.player';
+import { useSection5VideoStateManager } from '../../../utils/videos';
 
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
@@ -19,7 +19,7 @@ function Loading() {
   return (
     <div className='video-loading-ui'>
       <CircularProgress/>
-      Loading Video...
+      Fetching Video...
     </div>
   );
 }
@@ -37,7 +37,7 @@ function LoadError() {
 
 
 export default function VideoPlayer({onClose}){
-    const vsm = useVideoStateManager();
+    const vsm = useSection5VideoStateManager();
 
     return ( !vsm.blob ? <Loading/> : vsm.blob === 'error' ? <LoadError/> :
         <div className="video-player">

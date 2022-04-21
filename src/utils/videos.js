@@ -3,7 +3,12 @@ import { useState, useRef, createRef, useEffect } from "react";
 export const src = "https://media.istockphoto.com/videos/short-one-minute-story-about-a-young-couple-meeting-a-friend-in-the-video-id1358085867";
 
 
-export const useVideoStateManager = () => {
+const getVideo = (url, setBlob) => fetch(url).then(res => res.blob())
+    .then(b => {
+        setBlob(window.URL.createObjectURL(b))
+    }).catch(() => setBlob('error'))
+
+export const useSection5VideoStateManager = () => {
 
     const [currentTime, setCurrentTime] = useState(0);
     const [readableTime, setReadableTime] = useState('0:00');
@@ -53,12 +58,7 @@ export const useVideoStateManager = () => {
         setPreviewSlideWidth(bc.width);
     }
 
-    useEffect(() => {
-        fetch(src).then(res => res.blob())
-        .then(b => {
-            setBlob(window.URL.createObjectURL(b))
-        }).catch(() => setBlob('error'))
-    }, [setBlob])
+    useEffect(() => { getVideo(src, setBlob) }, [setBlob]);
 
     return {
         currentTime,
@@ -77,4 +77,22 @@ export const useVideoStateManager = () => {
         handlePreview
     }
 
+}
+
+export const useSection3VideoStateManager = () => {
+    const [videoPlaying, setVideoPlaying] = useState(false);
+    const [blob, setBlob] = useState();
+    const videoRef = createRef(); 
+
+    const toggle = () => videoRef.current[videoPlaying ? 'pause' : 'play']()
+
+    useEffect(() => { getVideo('./images/sec31.webm', setBlob) }, [setBlob]);
+
+    return {
+        videoPlaying,
+        blob,
+        videoRef,
+        toggle,
+        setVideoPlaying
+    }
 }

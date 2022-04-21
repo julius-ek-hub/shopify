@@ -103,4 +103,9 @@
         margin-right: 8px;
         color: inherit;
     }
+    &:is(.section-3 .video-loading-ui){
+        color: $light-black;
+        width: 100%;
+        margin: 10% 0;
+    }
 }

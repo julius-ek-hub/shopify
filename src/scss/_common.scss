@@ -18,3 +18,18 @@ ul{ list-style-type: none; }
 button{ text-transform: none !important; }
 
 .MuiModal-root[aria-labelledby = dark-modal]{z-index: 1500 !important;}
+
+.me-box{
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 20px !important;
+    height: 320px;
+    transform: translateZ(0px);
+    flex-grow: 1;
+    transition: 5s transform;
+    .MuiSpeedDial-fab{
+        background-color: $green-main !important;
+    }
+    &.show-me .MuiSpeedDial-fab { transform: scale(1) !important; }
+    &.hide-me .MuiSpeedDial-fab { transform: scale(0) !important; }
+}

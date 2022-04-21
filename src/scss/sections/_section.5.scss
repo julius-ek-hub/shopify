@@ -54,11 +54,15 @@
 
 .video-player{
     @include flex-justify-center();
+    overflow: hidden;
     .container{
         position: relative;
-        max-width: 100%;
+        overflow: hidden;
         &>button{ margin-left: calc(100% - 60.5px); }
-        video{ width: 100%; }
+        video{ 
+            max-width: 80vw; 
+            max-height: 80vh;
+        }
         .cover {
             position: absolute;
             width: 100%;
@@ -85,6 +89,10 @@
         width: 150px;
         position: absolute;
         bottom: 25px;
+        video {
+            max-width: 100%;
+            max-height: 100%;
+        }
         .cover{ @include flex-center(); }
         .readable{
             background-color: $light-black;

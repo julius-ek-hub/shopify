@@ -151,7 +151,7 @@ header.mobile {
   justify-content: center;
   flex-direction: column;
   padding: 0% 5%;
-  min-height: calc(100% - 65px);
+  min-height: calc(100vh - 65px);
 }
 
 .section-1 > :first-child {
@@ -531,11 +531,12 @@ header.mobile {
 .video-player {
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .video-player .container {
   position: relative;
-  max-width: 100%;
+  overflow: hidden;
 }
 
 .video-player .container > button {
@@ -543,7 +544,8 @@ header.mobile {
 }
 
 .video-player .container video {
-  width: 100%;
+  max-width: 80vw;
+  max-height: 80vh;
 }
 
 .video-player .container .cover {
@@ -579,6 +581,11 @@ header.mobile {
   width: 150px;
   position: absolute;
   bottom: 25px;
+}
+
+.video-player.preview video {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .video-player.preview .cover {

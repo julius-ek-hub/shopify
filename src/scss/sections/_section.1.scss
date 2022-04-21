@@ -3,7 +3,7 @@
     @include flex-justify-center();
     flex-direction: column;
     padding: 0% 5%;
-    min-height: calc(100% - 65px);
+    min-height: calc(100vh - 65px);
     &>:first-child {
         width: 100%;
         height: unset;

@@ -1,9 +1,7 @@
 import { useState, useRef, createRef, useEffect } from "react";
 
-export const src = "https://media.istockphoto.com/videos/short-one-minute-story-about-a-young-couple-meeting-a-friend-in-the-video-id1358085867";
 
-
-const getVideo = (url, setBlob) => fetch(url).then(res => res.blob())
+const getVideo = (setBlob) => fetch("./images/sec31.webm").then(res => res.blob())
     .then(b => {
         setBlob(window.URL.createObjectURL(b))
     }).catch(() => setBlob('error'))
@@ -58,7 +56,7 @@ export const useSection5VideoStateManager = () => {
         setPreviewSlideWidth(bc.width);
     }
 
-    useEffect(() => { getVideo(src, setBlob) }, [setBlob]);
+    useEffect(() => { getVideo(setBlob) }, [setBlob]);
 
     return {
         currentTime,
@@ -86,7 +84,7 @@ export const useSection3VideoStateManager = () => {
 
     const toggle = () => videoRef.current[videoPlaying ? 'pause' : 'play']()
 
-    useEffect(() => { getVideo('./images/sec31.webm', setBlob) }, [setBlob]);
+    useEffect(() => { getVideo(setBlob) }, [setBlob]);
 
     return {
         videoPlaying,
